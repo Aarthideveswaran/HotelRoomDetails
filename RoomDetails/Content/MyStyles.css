@@ -1,0 +1,40 @@
+﻿body {
+    background-image: url('../Images/hotel - copy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: larger;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+table, th, td {
+    font-size: x-large;
+    color: cornsilk;
+    font-weight: bolder;
+   border-width: thick;
+    text-align: left;
+}
+
+tr:hover{
+    background-color: darkslategrey;
+}
+
+.form-group{
+    font-size:larger;
+    color: cornsilk;
+    font-weight: bolder;
+    align-content:center;
+}
+
+.form-horizontal{
+    width: 890px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 100px;
+    color:white;
+}
+

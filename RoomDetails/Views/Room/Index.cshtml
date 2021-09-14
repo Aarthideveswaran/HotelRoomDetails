@@ -1,0 +1,79 @@
+﻿@model IEnumerable<RoomDetails.Models.Room_Details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:white">Room Details</h2>
+<hr>
+
+<a style="font-size:large" href="../Room/AddRoom" class="btn btn-danger pull-right fa fa-plus">Add New+</a>
+
+
+<table class="table table-striped ">
+    <thead style="background-color: transparent">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Room_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room_Floor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room_rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Available)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room_Floor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room_rent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Is_Available)
+                </td>
+                <td>
+                    <a href="@Url.Action("EditRoomDetails", "Room", new { id = item.Room_Id})" class="btn btn-danger">Edit</a>
+
+                    @*@Html.ActionLink("Details", "Details", new { id=item.Room_Id }) |*@
+                    <a href="@Url.Action("Delete", "Room", new { id = item.Room_Id})" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+</table>
+
+
+@section scripts{
+
+    <script>
+
+        $(function () {
+            var successMessage = '@TempData["successMessage"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+
+        
+        
+
+    </script>
+}
